@@ -38,6 +38,12 @@ public class CustomerTest {
 			System.out.println(customer.getCustomerName() + "님이 " + cost + "원 지불하였습니다.");
 			System.out.println(customer.getCustomerName() + "님의 현재 보너스 포인트: " + customer.bonusPoint + "점입니다.");
 		}
+		
+		// down-casting
+		if (customerMoon instanceof VIPCustomer) {
+			VIPCustomer vipCustomer = (VIPCustomer)customerMoon;
+			System.out.println("down-casting: " + vipCustomer.showCustomerInfo());
+		}
 	}
 
 }
