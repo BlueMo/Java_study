@@ -12,7 +12,13 @@ public class CompleteCalc extends Calculator{
 		return num1 / num2;
 	}
 	
+	/*@Override
+	public void description() {
+		System.out.println("CompleteCalc class에서 재정의한 default method");
+	}*/
+	
 	public void printTest() {
 		System.out.println("Casting test");
 	}
+	
 }

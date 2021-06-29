@@ -27,6 +27,11 @@ public class CalcTest {
 		//calc.printTest();			// Error
 		calc2.printTest();
 		
+		
+		int[] arr = {1, 2, 3, 4, 5};
+		System.out.println(Calc.total(arr));
+		
+		calc.description();
 	}
 
 }
