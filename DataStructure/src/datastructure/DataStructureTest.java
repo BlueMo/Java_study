@@ -3,7 +3,7 @@ package datastructure;
 public class DataStructureTest {
 
 	public static void main(String[] args) {
-		LinkedList<Integer> intList = new LinkedList<>();
+		MyLinkedList<Integer> intList = new MyLinkedList<>();
 		
 		intList.insertElement(123);
 		

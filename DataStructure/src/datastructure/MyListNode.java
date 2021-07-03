@@ -1,21 +1,21 @@
 package datastructure;
 
-public class ListNode<T> {
+public class MyListNode<T> {
 	
 	private T data;
-	public ListNode<T> prev, next;
+	public MyListNode<T> prev, next;
 	
-	public ListNode() {
+	public MyListNode() {
 		data = null;
 		next = prev = null;
 	}
 	
-	public ListNode(T data) {
+	public MyListNode(T data) {
 		this.data = data;
 		next = prev = null;
 	}
 	
-	public ListNode(T data, ListNode<T> prev, ListNode<T> next) {
+	public MyListNode(T data, MyListNode<T> prev, MyListNode<T> next) {
 		this.data = data;
 		this.prev = prev;
 		this.next = next;

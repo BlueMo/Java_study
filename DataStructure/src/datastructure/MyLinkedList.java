@@ -1,23 +1,23 @@
 package datastructure;
 
-public class LinkedList<T> {
+public class MyLinkedList<T> {
 	
-	private ListNode<T> head, tail;
+	private MyListNode<T> head, tail;
 	int count;
 	
-	public LinkedList() {
+	public MyLinkedList() {
 		head = tail = null;
 		count = 0;
 	}
 	
-	public ListNode<T> insertElement(T data, int position) throws IllegalArgumentException{	
+	public MyListNode<T> insertElement(T data, int position) throws IllegalArgumentException{	
 		if (position < 0 || position > count) {
 			throw new IllegalArgumentException("position value is abnormal.");
 		}
 		
 		
-		ListNode<T> tempNode = null;
-		ListNode<T> newNode = new ListNode<T>(data);
+		MyListNode<T> tempNode = null;
+		MyListNode<T> newNode = new MyListNode<T>(data);
 		
 		if (position == 0) {
 			tempNode = head;
@@ -45,16 +45,16 @@ public class LinkedList<T> {
 		return newNode;
 	}
 	
-	public ListNode<T> insertElement(T data){
+	public MyListNode<T> insertElement(T data){
 		return insertElement(data, 0);
 	}
 	
-	public ListNode<T> removeElement(int position) throws IllegalArgumentException{
+	public MyListNode<T> removeElement(int position) throws IllegalArgumentException{
 		if (position < 0 || position >= count) {
 			throw new IllegalArgumentException("position value is abnormal.");
 		}
 		
-		ListNode<T> tempNode = null;
+		MyListNode<T> tempNode = null;
 		if (position == 0) {
 			tempNode = head;
 			head = head.next;
@@ -79,18 +79,18 @@ public class LinkedList<T> {
 			throw new IllegalArgumentException("position value is abnormal.");
 		}
 		
-		ListNode<T> tempNode = head;
+		MyListNode<T> tempNode = head;
 		for (int i = 0; i < position; i++) tempNode = tempNode.next;
 		
 		return tempNode.getData();
 	}
 	
-	public ListNode<T> getNode(int position) throws IllegalArgumentException{
+	public MyListNode<T> getNode(int position) throws IllegalArgumentException{
 		if (position < 0 || position >= count) {
 			throw new IllegalArgumentException("position value is abnormal.");
 		}
 		
-		ListNode<T> tempNode = null;
+		MyListNode<T> tempNode = null;
 		for (int i = 0; i < count; i++) tempNode = tempNode.next;
 		
 		return tempNode;
@@ -109,19 +109,19 @@ public class LinkedList<T> {
 		if (count == 0) return true;
 		return false;
 	}
-	public ListNode<T> getHead() {
+	public MyListNode<T> getHead() {
 		return head;
 	}
 
-	public void setHead(ListNode<T> head) {
+	public void setHead(MyListNode<T> head) {
 		this.head = head;
 	}
 
-	public ListNode<T> getTail() {
+	public MyListNode<T> getTail() {
 		return tail;
 	}
 
-	public void setTail(ListNode<T> tail) {
+	public void setTail(MyListNode<T> tail) {
 		this.tail = tail;
 	}
 	
