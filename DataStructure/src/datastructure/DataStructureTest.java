@@ -3,7 +3,7 @@ package datastructure;
 public class DataStructureTest {
 
 	public static void main(String[] args) {
-		MyQueue<Integer> queue = new MyQueue<Integer>();
+		/*MyQueue<Integer> queue = new MyQueue<Integer>();
 		
 		for (int i = 0; i < 10; i++) queue.push(i);
 		
@@ -19,6 +19,15 @@ public class DataStructureTest {
 		
 		while (!stringQueue.isEmpty()) {
 			System.out.println("pop: " + stringQueue.pop());
+		}
+		*/
+		
+		MyStack<String> stack = new MyStack<String>();
+		
+		for (char ch = 'a'; ch <= 'g'; ch++) stack.push(String.valueOf(ch));
+		
+		while (!stack.isEmpty()) {
+			System.out.println("pop: " + stack.pop());
 		}
 	}
 
