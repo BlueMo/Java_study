@@ -3,18 +3,23 @@ package datastructure;
 public class DataStructureTest {
 
 	public static void main(String[] args) {
-		MyLinkedList<Integer> intList = new MyLinkedList<>();
+		MyQueue<Integer> queue = new MyQueue<Integer>();
 		
-		intList.insertElement(123);
+		for (int i = 0; i < 10; i++) queue.push(i);
 		
-		for (int i = 1; i < 12; i++) intList.insertElement(i+1, i);
+		while (!queue.isEmpty()) {
+			int h = queue.pop().intValue();
+			
+			System.out.println("pop: " + h);
+		}
 		
-		for (int i = 0; i < intList.size(); i++) System.out.println(intList.getElement(i));
+		MyQueue<String> stringQueue = new MyQueue<String>();
 		
-		intList.removeElement(0);
-		for (int i = 0; i < intList.size(); i++) System.out.println(intList.getElement(i));
-		intList.removeElement(intList.size()-1);
-		for (int i = 0; i < intList.size(); i++) System.out.println(intList.getElement(i));
+		for (char ch = 'A'; ch <= 'Z'; ch++) stringQueue.push(String.valueOf(ch));
+		
+		while (!stringQueue.isEmpty()) {
+			System.out.println("pop: " + stringQueue.pop());
+		}
 	}
 
 }

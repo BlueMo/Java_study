@@ -2,11 +2,11 @@ package datastructure;
 
 public class MyLinkedList<T> {
 	
-	private MyListNode<T> head, tail;
+	protected MyListNode<T> head, rear;
 	int count;
 	
 	public MyLinkedList() {
-		head = tail = null;
+		head = rear = null;
 		count = 0;
 	}
 	
@@ -22,15 +22,15 @@ public class MyLinkedList<T> {
 		if (position == 0) {
 			tempNode = head;
 			newNode.next = tempNode;
-			if (count == 0) tail = newNode;
+			if (count == 0) rear = newNode;
 			else tempNode.prev = newNode;
 			head = newNode;
 		}
 		else if (position == count) {
-			tempNode = tail;
+			tempNode = rear;
 			tempNode.next = newNode;
 			newNode.prev = tempNode;
-			tail = newNode;
+			rear = newNode;
 		}
 		else {
 			tempNode = head;
@@ -60,8 +60,8 @@ public class MyLinkedList<T> {
 			head = head.next;
 		}
 		else if (position == count - 1) {
-			tempNode = tail;
-			tail = tail.prev;
+			tempNode = rear;
+			rear = rear.prev;
 		}
 		else {
 			tempNode = head;
@@ -97,7 +97,7 @@ public class MyLinkedList<T> {
 	}
 	
 	public void clear() {
-		head = tail = null;
+		head = rear = null;
 		count = 0;
 	}
 	
@@ -117,12 +117,12 @@ public class MyLinkedList<T> {
 		this.head = head;
 	}
 
-	public MyListNode<T> getTail() {
-		return tail;
+	public MyListNode<T> getBack() {
+		return rear;
 	}
 
-	public void setTail(MyListNode<T> tail) {
-		this.tail = tail;
+	public void setTail(MyListNode<T> rear) {
+		this.rear = rear;
 	}
 	
 	
