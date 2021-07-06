@@ -86,6 +86,11 @@ public class MyHeap<T extends Comparable<T>>{
 		return false;
 	}
 	
+	public T front() {
+		if (size == 0) throw new NoSuchElementException();
+		return heapArray[1];
+	}
+	
 	public void printHeapArray() {
 		for (int i = 1; i <= size; i++) {
 			System.out.print(heapArray[i] + " ");
