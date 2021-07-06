@@ -3,7 +3,7 @@ package datastructure;
 public class MyLinkedList<T> {
 	
 	protected MyListNode<T> head, rear;
-	int count;
+	private int count;
 	
 	public MyLinkedList() {
 		head = rear = null;
@@ -113,18 +113,13 @@ public class MyLinkedList<T> {
 		return head;
 	}
 
-	public void setHead(MyListNode<T> head) {
-		this.head = head;
-	}
-
 	public MyListNode<T> getBack() {
 		return rear;
 	}
-
-	public void setTail(MyListNode<T> rear) {
-		this.rear = rear;
-	}
 	
+	public int count() {
+		return count;
+	}
 	
 }
 
