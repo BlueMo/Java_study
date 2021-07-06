@@ -1,13 +1,15 @@
 package datastructure;
 
+import java.util.NoSuchElementException;
+
 public class MyQueue<T> extends MyLinkedList<T>{
 	
 	public void push(T data) {
 		insertElement(data, count);
 	}
 	
-	public T pop() throws NullPointerException{
-		if (count == 0) throw new NullPointerException("Queue is empty.");
+	public T pop(){
+		if (count == 0) throw new NoSuchElementException();
 		return removeElement(0).getData();
 	}
 	
