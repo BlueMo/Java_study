@@ -20,7 +20,7 @@ public class DataStructureTest {
 		while (!stringQueue.isEmpty()) {
 			System.out.println("pop: " + stringQueue.pop());
 		}
-		*/
+		
 		
 		MyStack<String> stack = new MyStack<String>();
 		
@@ -28,6 +28,24 @@ public class DataStructureTest {
 		
 		while (!stack.isEmpty()) {
 			System.out.println("pop: " + stack.pop());
+		}*/
+		
+		MyHeap<Integer> maxHeap = new MyHeap<>();
+		
+		for (int i = 1; i <= 10; i++) {
+			maxHeap.push(i);
+		}
+		
+		
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(maxHeap.pop());
+			if (i % 2 == 0) maxHeap.push(i*2);
+		//	maxHeap.printHeapArray();
+			
+		}
+		
+		while (maxHeap.isEmpty() == false) {
+			System.out.println(maxHeap.pop());
 		}
 	}
 
