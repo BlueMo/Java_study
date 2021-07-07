@@ -19,11 +19,20 @@ public class MemberArrayList {
 	}
 	
 	public boolean removeMember(int memberId) {
-		for (int i = 0; i < memberList.size(); i++) {
+		/*for (int i = 0; i < memberList.size(); i++) {
 			Member member = memberList.get(i);
 			
 			if (member.getMemberId() == memberId) {
 				memberList.remove(i);
+				return true;
+			}
+		}*/
+		Iterator<Member> it = memberList.iterator();
+		while (it.hasNext()) {
+			Member member = it.next();
+			if (member.getMemberId() == memberId) {
+				// memberList.remove(member);			// 검색 추가 시간 소요
+				it.remove();
 				return true;
 			}
 		}
