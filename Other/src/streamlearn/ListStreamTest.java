@@ -16,12 +16,20 @@ public class ListStreamTest {
 		sList.add("Gang");
 		
 		Stream<String> stream = sList.stream();
-		stream.forEach(s->System.out.println(s));
+		
+		/*stream.forEach(s->System.out.println(s));
 		
 		sList.stream().sorted().forEach(s->System.out.print(s + "\t"));
 		System.out.print("\n");
 		sList.stream().map(s->s.length()).forEach(s->System.out.print(s + "\t"));
 		System.out.print("\n");
-		sList.stream().filter(s->s.length()>3).forEach(s->System.out.print(s + "\t"));
+		sList.stream().filter(s->s.length()>3).forEach(s->System.out.print(s + "\t"));*/
+		
+		System.out.println(stream.reduce("", (s1, s2) ->
+				{if (s1.getBytes().length >= s2.getBytes().length) return s1;
+				else return s2;}));
+		
+		String str = sList.stream().reduce(new CompareString()).get();
+		System.out.println(str);
 	}
 }
